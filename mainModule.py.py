@@ -80,7 +80,7 @@ def predictDisease(climate, season):
     
 
     print('\n\n\t_________Most Probable Disease_________\n')
-    sqlQuery =  f" SELECT SYMPTOM, MEDICINE, COUNT(MEDICINE) AS C FROM DATA1 GROUP BY MEDICINE ORDER BY C DESC "
+    sqlQuery =  f" SELECT SYMPTOM, MEDICINE, COUNT(MEDICINE) AS C FROM DATA1 GROUP BY MEDICINE ORDER BY C DESC LIMIT 5"
     mycursor.execute(sqlQuery)
     myresult = mycursor.fetchall()
     for i in myresult:
