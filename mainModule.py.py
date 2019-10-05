@@ -52,7 +52,15 @@ def predictMedicine(symptom, climate):
     # predict the medicine and disease
     #print(symptom)
     #print(climate)
+
     sqlQuery =  f"SELECT DISTINCT MEDICINE FROM DATA1 WHERE SYMPTOM = '{symptom}' AND CLIMATE = '{climate}' "
+    mycursor.execute(sqlQuery)
+    myresult = mycursor.fetchall()
+    for i in myresult:
+        print('\n',i)
+
+    print('\n\n\t____________Most Used Medicine in past___________\n')
+    sqlQuery =  f" SELECT MEDICINE, COUNT(*) AS C FROM DATA1 GROUP BY MEDICINE ORDER BY C DESC LIMIT 5; "
     mycursor.execute(sqlQuery)
     myresult = mycursor.fetchall()
     for i in myresult:
@@ -63,15 +71,21 @@ def predictDisease(climate, season):
     # predict the medicine and disease
     #print(symptom)
     #print(climate)
+    
     sqlQuery =  f"SELECT SYMPTOM, MEDICINE FROM DATA1 WHERE CLIMATE = '{climate}' AND SEASON = '{season}' "
     mycursor.execute(sqlQuery)
     myresult = mycursor.fetchall()
     for i in myresult:
         print('\n',i)
+    
 
-
-
-
+    print('\n\n\t_________Most Probable Disease_________\n')
+    sqlQuery =  f" SELECT SYMPTOM, MEDICINE, COUNT(MEDICINE) AS C FROM DATA1 GROUP BY MEDICINE ORDER BY C DESC "
+    mycursor.execute(sqlQuery)
+    myresult = mycursor.fetchall()
+    for i in myresult:
+        print('\n',i)
+    
 
 
 
