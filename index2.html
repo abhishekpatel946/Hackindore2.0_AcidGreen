@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Future-Disease-Prediction</title>
+</head>
+
+<body style="background-color: rgb(14, 17, 20)">
+    <header class="shadow">
+        <div class="header-content d-flex justify-content-center p-2">
+            <img src="future-internet-wordle-640.jpg" alt="" id="header-logo">
+            <div id="header-msg" class="ml-5 align-self-center">Parking Lot</div>
+        </div>
+    </header>
+   <!-- <form autocomplete=off action="javascript:;" id="reasetForm" onsubmit="insert_value()"> -->
+        <div class="form-container mt-5">
+            <form action="connect.php" method="POST" class="w-50 mx-auto" id="entryForm">
+                <h5 class="text-center">Future-Disease-Prediction</h5>
+                <div class="form-group">
+                    <label for="Symptom">Symptom:</label>
+                    <input type="text" class="form-control rounded-0 shadow-sm" id="Symptom" placeholder="Symptom">
+                </div>
+                <div class="form-group">
+                    <label for="Duration of illness">Duration:</label>
+                    <input type="text" class="form-control rounded-0 shadow-sm" id="Duration" placeholder="Duration">
+                </div>
+                <div class="form-group">
+                    <label for="Climate">Climate:</label>
+                    <input type="text" class="form-control rounded-0 shadow-sm" id="Climate" placeholder="Climate">
+                </div>
+                <div class="form-group">
+                    <label for="Season">Season:</label>
+                    <input type="text" class="form-control rounded-0 shadow-sm" id="Season" placeholder="Season">
+                </div>
+                <div class="form-group">
+                    <label for="Date">Date:</label>
+                    <input type="date" class="form-control rounded-0 shadow-sm" id="date" placeholder="date">
+                <button type="submit" class="btn mx-auto d-block mt-5 rounded-0 shadow" id="btnOne">Search Medicine</button>
+            </div>
+<!--    </form>   -->
+    <div class="table-container mt-5 mb-5 w-75 mx-auto" >
+            <h5 class="text-center mb-3">Report</h5>
+            <input type="text" class="w-100 mb-3" id="searchInput" placeholder="Search...">
+            <table class="table table-striped shadow " id="parkingTable">
+                    <thead class="text-black" id="tableHead">
+                      <tr>
+                        <th scope="col">Symptom</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Climate</th>
+                        <th scope="col">Season</th>
+                        <th scope="col">date</th>
+                        <th scope="col">Medicine</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                     
+                    </tbody>
+                  </table>
+    </div>
+
+    <script src="./JS/bootstrap.min.js"></script>
+    <script src="./JS/core.js"></script>
+    <script src="./JS/main.js"></script>
+
+
+
+    </form>
+</body>
+</html>
